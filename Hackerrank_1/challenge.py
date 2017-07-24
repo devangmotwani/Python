@@ -46,7 +46,7 @@
 
 N=int(input())
 list_array = []
-
+one_out=0
 for i in range(1,N+1):
     command = input()
     command = command.split()
@@ -64,9 +64,10 @@ for i in range(1,N+1):
         if "remove" in command:
             for i in list_array:
                 if i==(int(command[1])):
-                    print(i)
+                    #print(i)
                     #print(list_array.index(i))
                     list_array.pop(list_array.index(i))
+                    break
         else:
             if "append" in command:
                 list_array.append(int(command[1]))
@@ -87,3 +88,16 @@ for i in range(1,N+1):
             break
 
 print(list_array)
+
+# Other solution
+# n = input()
+# l = []
+# for _ in range(n):
+#     s = raw_input().split()
+#     cmd = s[0]
+#     args = s[1:]
+#     if cmd !="print":
+#         cmd += "("+ ",".join(args) +")"
+#         eval("l."+cmd)
+#     else:
+#         print l
